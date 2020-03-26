@@ -1,0 +1,78 @@
+.weatherApp {
+  background-color: #497fa8;
+  font-family: 'Caladea';
+  color: white;
+  text-align: center;
+}
+
+.search {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.search input {
+  font-size: 50px;
+  text-align: center;
+}
+
+.searchButton {
+  font-size: 30px;
+  height: 100%;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.location {
+  font-size: 65px;
+}
+
+.date {
+  background: #a8a8a8c2;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.period {
+  font-size: 35px;
+}
+
+.day {
+  background-color: #3e86f1;
+}
+
+.night {
+  background-color: #191b51;
+}
+
+.wind {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.icon {
+  width: 100%;
+}
+
+.row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.individualPeriod {
+  margin-bottom: 20px;
+}
+
+.hour {
+  width: 120px;
+}
+/*# sourceMappingURL=style.css.map */
