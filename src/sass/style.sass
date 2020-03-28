@@ -1,15 +1,25 @@
+$computer: 1024px
+$tablet: 768px
+
 .weatherApp
     background-color: #497fa8
     font-family: 'Caladea'
     color: white
     text-align: center
+    display: grid
+
+.top
+    display: grid
+    grid-template-columns: auto
 
 .search
+    background-color: green
     margin-top: 20px
     margin-right: 20px
     margin-left: 20px
 
-.search input
+.searchInput
+    width: 100%
     font-size: 50px
     text-align: center
 
@@ -23,15 +33,32 @@
     font-size: 65px
 
 .date
+    font-size: 20px
     background: #a8a8a8c2
+    display: none
 
 .title
-    font-size: 45px
+    font-size: 30px
     font-weight: 500
-    margin-bottom: 10px
+    margin-bottom: 
+    height: 50px
+
+.periods
+    display: grid
+    grid-template-columns: auto
+    grid-column-gap: 5px
+    @media screen and (min-width: $tablet)
+        grid-template-columns: auto auto
+    @media screen and (min-width: $computer)
+        grid-template-columns: auto auto auto auto auto auto auto
 
 .period
-    font-size: 35px
+    font-size: 25px
+    display: grid
+    grid-template-rows: auto auto auto
+
+.individualPeriod
+    display: none
 
 .day
     background-color: #3e86f1
@@ -44,10 +71,13 @@
     justify-content: center
 
 .icon
-    width: 100%
+    min-width: 100px
+    min-height: 100px
 
-.row
-    justify-content: center
+.forecastData
+    display: grid
+    align-content: space-evenly
+    height: 50%
 
 .individualPeriod
     margin-bottom: 20px

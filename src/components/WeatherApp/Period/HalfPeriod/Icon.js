@@ -1,11 +1,9 @@
 import React from 'react'
 
-import Image from 'react-bootstrap/Image'
-
 class Icon extends React.Component {
     render() {
         return(
-            <Image src={this.props.url} alt={this.props.alt}  className='icon' />
+            <img src={this.props.url} alt={this.props.alt}  className='icon' />
         )
     }
 }

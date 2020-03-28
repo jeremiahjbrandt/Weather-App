@@ -1,10 +1,5 @@
 import React from 'react'
 
-import InputGroup from 'react-bootstrap/InputGroup'
-import FormControl from 'react-bootstrap/FormControl'
-
-import Button from 'react-bootstrap/Button'
-
 class Search extends React.Component {
     constructor(props) {
         super(props)
@@ -25,14 +20,17 @@ class Search extends React.Component {
 
     render() {
         return(
-            <InputGroup className='search'>
-                <FormControl onChange={this.handleInput}
-                    placeholder='address, city, or zip code'
+            <form className='search'>
+                <input 
+                    className='searchInput'
+                    type='text' 
+                    onChange={this.handleInput}
+                    placeholder='City or Zip Code'
                 />
-                <Button onClick={this.handleSearch} className='searchButton'>
+                <inpit type='submit' onClick={this.handleSearch} className='searchButton'>
                     Search
-                </Button>
-            </InputGroup>
+                </inpit>
+            </form>
         )
     }
 }

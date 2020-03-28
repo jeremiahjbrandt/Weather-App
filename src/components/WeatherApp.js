@@ -1,8 +1,5 @@
 import React from 'react'
 
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-
 import Location from './WeatherApp/Period/HalfPeriod/Location'
 import IndividualPeriod from './WeatherApp/IndividualPeriod'
 import Period from './WeatherApp/Period'
@@ -389,31 +386,27 @@ class WeatherApp extends React.Component {
         const {sevenDayForecast} = this.state.isLoaded ? this.state.forecast : ''
 
         return(
-            <Container fluid={true} className='weatherApp'>
+            <div fluid={true} className='weatherApp'>
                 {/* Seach */}
-                <Row>
+                <div className='top'>
                     <Search handleSearch={this.handleSearch.bind(this)} />
-                </Row>
 
-                {/* Location data */}
-                <Row>
-                <Location
-                    city={city}
-                    state={state}
-                />
-                </Row>
+                    {/* Location data */}
+                    <Location
+                        city={city}
+                        state={state}
+                    />
+                </div>
 
                 {/* Individual Day */}
-                <Row>
-                    {showIndividualDay && hourlyForecastIsLoad ? 
-                        <IndividualPeriod  
-                            forecast={this.state.hourlyForecast[2]}
-                        /> 
-                    : ''}
-                </Row>
+                {showIndividualDay && hourlyForecastIsLoad ? 
+                    <IndividualPeriod  
+                        forecast={this.state.hourlyForecast[2]}
+                    /> 
+                : ''}
 
                 {/* Forecast data */}
-                <Row>
+                <div className='periods'>
                 {this.state.isLoaded ? sevenDayForecast.map(currForecast => 
                     <Period 
                         date={currForecast.date} 
@@ -421,9 +414,9 @@ class WeatherApp extends React.Component {
                         key={currForecast.date}
                     />
                 ): ''}
-                </Row>
+                </div>
 
-            </Container>
+            </div>
         )
     }
 }

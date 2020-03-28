@@ -1,13 +1,11 @@
 import React from 'react'
 
-import Row from 'react-bootstrap/Row'
-
 class Title extends React.Component {
     render() {
         return(
-            <Row className='title'>
+            <div className='title'>
                 {this.props.title}
-            </Row>
+            </div>
         )
     }
 }

@@ -5,8 +5,6 @@ import Forecast from './HalfPeriod/Forecast'
 import Temperature from './HalfPeriod/Temperature'
 import Wind from './HalfPeriod/Wind'
 
-import Row from 'react-bootstrap/Col'
-
 class HalfPeriod extends React.Component {
     render() {
         //Variables
@@ -17,13 +15,15 @@ class HalfPeriod extends React.Component {
         isDaytime ? className+=' day' : className+=' night'
 
         return(
-            <Row className={className}>
+            <div className={className}>
                 <Title title={name} />
                 <Icon url={icon} alt={shortForecast} />
-                <Forecast forecast={shortForecast} />
-                <Temperature temperature={temperature} />
-                <Wind direction={windDirection} speed={windSpeed} /> 
-            </Row>
+                <div className='forecastData'>
+                    <Forecast forecast={shortForecast} />
+                    <Temperature temperature={temperature} />
+                    <Wind direction={windDirection} speed={windSpeed} /> 
+                </div>
+            </div>
         )
     }
 }

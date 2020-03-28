@@ -3,15 +3,26 @@
   font-family: 'Caladea';
   color: white;
   text-align: center;
+  display: -ms-grid;
+  display: grid;
+}
+
+.top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
 }
 
 .search {
+  background-color: green;
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
 }
 
-.search input {
+.searchInput {
+  width: 100%;
   font-size: 50px;
   text-align: center;
 }
@@ -28,17 +39,49 @@
 }
 
 .date {
+  font-size: 20px;
   background: #a8a8a8c2;
+  display: none;
 }
 
 .title {
-  font-size: 45px;
+  font-size: 30px;
   font-weight: 500;
-  margin-bottom: 10px;
+  height: 50px;
+}
+
+.periods {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-column-gap: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .periods {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .periods {
+    -ms-grid-columns: auto auto auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto auto auto;
+  }
 }
 
 .period {
-  font-size: 35px;
+  font-size: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+}
+
+.individualPeriod {
+  display: none;
 }
 
 .day {
@@ -59,13 +102,16 @@
 }
 
 .icon {
-  width: 100%;
+  min-width: 100px;
+  min-height: 100px;
 }
 
-.row {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.forecastData {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  height: 50%;
 }
 
 .individualPeriod {

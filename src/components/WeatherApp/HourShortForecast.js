@@ -1,13 +1,11 @@
 import React from 'react'
 
-import Col from 'react-bootstrap/Col'
-
 class HourShortForecast extends React.Component {
     render() {
         return(
-            <Col className='hourShortForecast'>
+            <div className='hourShortForecast'>
                 {this.props.shortForecast}
-            </Col>
+            </div>
         )
     }
 }
