@@ -1,5 +1,16 @@
-$computer: 1024px
 $tablet: 768px
+$computer: 1024px
+
+$searchBackground: #3a9e2a
+$searchColor: #ffffff
+$searchBackgroundHover: #2c7a21
+$searchColorHover: #ffffff
+$dateBackground: #73937f
+$dateColor: #ffffff
+$dayBackground: #3e86f1
+$dayColor: #ffffff
+$nightBackground: #191b51
+$nightColor: #ffffff
 
 .weatherApp
     background-color: #497fa8
@@ -13,10 +24,15 @@ $tablet: 768px
     grid-template-columns: auto
 
 .search
-    background-color: green
+    background-color: $searchBackground
+    color: $searchColor
     margin-top: 20px
     margin-right: 20px
     margin-left: 20px
+
+.search:hover
+    background-color: $searchBackgroundHover
+    color: $searchColorHover
 
 .searchInput
     width: 100%
@@ -33,9 +49,10 @@ $tablet: 768px
     font-size: 65px
 
 .date
+    background: $dateBackground
+    color: $dateColor
     font-size: 20px
-    background: #a8a8a8c2
-    display: none
+    display: inline
 
 .title
     font-size: 30px
@@ -47,12 +64,14 @@ $tablet: 768px
     display: grid
     grid-template-columns: auto
     grid-column-gap: 5px
+    grid-row-gap: 5px
     @media screen and (min-width: $tablet)
         grid-template-columns: auto auto
     @media screen and (min-width: $computer)
         grid-template-columns: auto auto auto auto auto auto auto
 
 .period
+    height: 100%
     font-size: 25px
     display: grid
     grid-template-rows: auto auto auto
@@ -61,13 +80,15 @@ $tablet: 768px
     display: none
 
 .day
-    background-color: #3e86f1
+    background-color: $dayBackground
+    color: $dayColor
 
 .night
-    background-color: #191b51
+    background-color: $nightBackground
+    color: $nightColor
 
 .wind
-    display: flex
+    display: grid
     justify-content: center
 
 .icon
