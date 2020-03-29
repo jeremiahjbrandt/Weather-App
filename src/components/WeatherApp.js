@@ -221,6 +221,7 @@ class WeatherApp extends React.Component {
         super(props)
         this.fetchWeatherData = this.fetchWeatherData.bind(this)
         this.resizePeriods = this.resizePeriods.bind(this)
+        this.handleSearch = this.handleSearch.bind(this)
         this.handleDataLoading = this.handleDataLoading.bind(this)
         this.handleSevenDayForecast = this.handleSevenDayForecast.bind(this)
         this.handleHourlyForecast = this.handleHourlyForecast.bind(this)
@@ -339,9 +340,7 @@ class WeatherApp extends React.Component {
         fetch(URL)
             .then(response => response.json())
             .then(data => this.setState({isLoaded: false, location: value, lat: data.results[0].geometry.location.lat, lng: data.results[0].geometry.location.lng}))
-    }
-
-    
+        }    
 
     //Gets max heights and updates all other elements of same class
     resizePeriods() {
@@ -386,10 +385,10 @@ class WeatherApp extends React.Component {
         const {sevenDayForecast} = this.state.isLoaded ? this.state.forecast : ''
 
         return(
-            <div fluid={true} className='weatherApp'>
+            <div className='weatherApp'>
                 {/* Seach */}
                 <div className='top'>
-                    <Search handleSearch={this.handleSearch.bind(this)} />
+                    <Search handleSearch={this.handleSearch} />
 
                     {/* Location data */}
                     <Location

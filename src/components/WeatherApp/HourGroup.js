@@ -9,6 +9,7 @@ class HourGroup extends React.Component {
                 {this.props.hours 
                     ? this.props.hours.map((currHour) => 
                         <Hour 
+                            key={currHour.startTime}
                             time={currHour.startTime} 
                             icon={currHour.icon}
                             temperature={currHour.temperature}

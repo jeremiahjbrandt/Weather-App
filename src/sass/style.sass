@@ -1,6 +1,8 @@
 $tablet: 768px
 $computer: 1024px
 
+$weatherAppBackground: #497fa8
+$weatherAppColor: #ffffff
 $searchBackground: #3a9e2a
 $searchColor: #ffffff
 $searchBackgroundHover: #2c7a21
@@ -13,9 +15,9 @@ $nightBackground: #191b51
 $nightColor: #ffffff
 
 .weatherApp
-    background-color: #497fa8
+    background-color: $weatherAppBackground
+    color: $weatherAppColor
     font-family: 'Caladea'
-    color: white
     text-align: center
     display: grid
 
@@ -24,15 +26,10 @@ $nightColor: #ffffff
     grid-template-columns: auto
 
 .search
-    background-color: $searchBackground
-    color: $searchColor
     margin-top: 20px
     margin-right: 20px
     margin-left: 20px
 
-.search:hover
-    background-color: $searchBackgroundHover
-    color: $searchColorHover
 
 .searchInput
     width: 100%
@@ -40,11 +37,18 @@ $nightColor: #ffffff
     text-align: center
 
 .searchButton
+    background-color: $searchBackground
+    color: $searchColor
+    border: none
     font-size: 30px
     height: 100%
-    margin-left: 20px
-    width: 200px
+    width: 100%
 
+.searchButton:hover
+    background-color: $searchBackgroundHover
+    color: $searchColorHover
+    border: none
+    
 .location
     font-size: 65px
 

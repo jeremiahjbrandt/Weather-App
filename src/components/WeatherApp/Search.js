@@ -20,17 +20,16 @@ class Search extends React.Component {
 
     render() {
         return(
-            <form className='search'>
+            // Changed type from form to div because form was causing WeatherApp to re-render
+            <div className='search' /* onSubmit={this.handleSearch} */>
                 <input 
                     className='searchInput'
                     type='text' 
                     onChange={this.handleInput}
                     placeholder='City or Zip Code'
                 />
-                <inpit type='submit' onClick={this.handleSearch} className='searchButton'>
-                    Search
-                </inpit>
-            </form>
+                <input type='submit' className='searchButton' onClick={this.handleSearch} value='Search' />
+            </div>
         )
     }
 }
