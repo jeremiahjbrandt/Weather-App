@@ -61,7 +61,7 @@ $nightColor: #ffffff
 .title
     font-size: 30px
     font-weight: 500
-    margin-bottom: 
+    margin-bottom: 10px
     height: 50px
 
 .periods
@@ -70,15 +70,15 @@ $nightColor: #ffffff
     grid-column-gap: 5px
     grid-row-gap: 5px
     @media screen and (min-width: $tablet)
-        grid-template-columns: auto auto
+        grid-template-columns: repeat(2, 1fr)
     @media screen and (min-width: $computer)
-        grid-template-columns: auto auto auto auto auto auto auto
+        grid-template-columns: repeat(7, 1fr)
 
 .period
     height: 100%
     font-size: 25px
     display: grid
-    grid-template-rows: auto auto auto
+    grid-template-rows: repeat(3, auto)
 
 .individualPeriod
     display: none
