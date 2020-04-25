@@ -1,220 +1,8 @@
 import React from 'react'
 
 import Location from './WeatherApp/Period/HalfPeriod/Location'
-import IndividualPeriod from './WeatherApp/IndividualPeriod'
 import Period from './WeatherApp/Period'
 import Search from './WeatherApp/Search'
-
-const dummyHourlyForecast = [
-    {
-        title: {
-            name: 'Sunday',
-            date: 'March 1, 2020',
-        },
-        hourlyForecast: [
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0100',
-                temperature: 12,
-            },
-            {
-                startTime: '0200',
-                temperature: 12,
-            },
-            {
-                startTime: '0300',
-                temperature: 12,
-            },
-            {
-                startTime: '0400',
-                temperature: 12,
-            },
-            {
-                startTime: '0500',
-                temperature: 12,
-            },
-            {
-                startTime: '0600',
-                temperature: 12,
-            },
-            {
-                startTime: '0700',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-        ]
-    },
-    {
-        title: {
-            name: 'Monday',
-            date: 'March 2, 2020',
-        },
-        hourlyForecast: [
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0100',
-                temperature: 12,
-            },
-            {
-                startTime: '0200',
-                temperature: 12,
-            },
-            {
-                startTime: '0300',
-                temperature: 12,
-            },
-            {
-                startTime: '0400',
-                temperature: 12,
-            },
-            {
-                startTime: '0500',
-                temperature: 12,
-            },
-            {
-                startTime: '0600',
-                temperature: 12,
-            },
-            {
-                startTime: '0700',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-            {
-                startTime: '0000',
-                temperature: 12,
-            },
-        ]
-    }
-]
 
 class WeatherApp extends React.Component {
     constructor(props) {
@@ -230,8 +18,8 @@ class WeatherApp extends React.Component {
             location: this.props.defaultLocation,
             showIndividualDay: true,
             hourlyForecastIsLoad: false,
-            lat: 39.0914657,
-            lng: -93.21044209999999,
+            lat: 38.9071923,
+            lng: -77.0368707,
 
         }
     }
@@ -311,7 +99,7 @@ class WeatherApp extends React.Component {
         let hours = []
 
         //Gets time of each hour
-        periods.map(currHour => {
+        periods.forEach(currHour => {
             const timeIndex = currHour.startTime.indexOf("T")
             const hourTime = parseInt(currHour.startTime.substring(timeIndex+1, timeIndex+3))
 
@@ -354,34 +142,11 @@ class WeatherApp extends React.Component {
         for(let i=0; i<periodTitles.length; i++) {
             periodTitles.item(i).style.height = maxPeriodTitlesHeight + 'px'
         }
-
-        //For days
-        let days = document.getElementsByClassName('day')
-        let maxDayHeight = 0
-        for(let i=0; i<days.length; i++) {
-            let currDayHeight = days.item(i).clientHeight
-            maxDayHeight = currDayHeight > maxDayHeight ? currDayHeight : maxDayHeight
-        }
-        for(let i=0; i<days.length; i++) {
-            days.item(i).style.height = maxDayHeight + 'px'
-        }
-        
-        //For nights
-        let nights = document.getElementsByClassName('night')
-        let maxNightHeight = 0
-        for(let i=0; i<nights.length; i++) {
-            let currNightHeight = nights.item(i).clientHeight
-            maxNightHeight = currNightHeight > maxNightHeight ? currNightHeight : maxNightHeight
-        }
-        for(let i=0; i<nights.length; i++) {
-            nights.item(i).style.height = maxNightHeight + 'px'
-        }
     }
 
     render() {
         //Initializes variables if API loads
         const {city, state} = this.state.isLoaded ? this.state.forecast.location : ''
-        const {showIndividualDay, hourlyForecastIsLoad} = this.state
         const {sevenDayForecast} = this.state.isLoaded ? this.state.forecast : ''
 
         return(
@@ -396,13 +161,6 @@ class WeatherApp extends React.Component {
                         state={state}
                     />
                 </div>
-
-                {/* Individual Day */}
-                {showIndividualDay && hourlyForecastIsLoad ? 
-                    <IndividualPeriod  
-                        forecast={this.state.hourlyForecast[2]}
-                    /> 
-                : ''}
 
                 {/* Forecast data */}
                 <div className='periods'>

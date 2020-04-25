@@ -5,7 +5,7 @@ import WeatherApp from './components/WeatherApp'
 function App() {
   return (
     <div className="App">
-        <WeatherApp defaultLocation='39.7456,-97.0892' />
+        <WeatherApp />
     </div>
   );
 }

@@ -9,6 +9,7 @@ class Period extends React.Component {
                 {/* Date */}
                 <Date 
                     date={this.props.date}
+                    day={this.props.halfPeriods}
                 />
                         
                 {/* Half Periods */}
